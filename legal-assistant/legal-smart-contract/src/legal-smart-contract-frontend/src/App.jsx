@@ -1,80 +1,3 @@
-// export default App;
-
-// import { useEffect, useState } from 'react';
-// import { legal_smart_contract_backend } from '../../declarations/legal-smart-contract-backend';
-
-// function App() {
-//   const [documents, setDocuments] = useState([]);
-//   const [name, setName] = useState('');
-//   const [content, setContent] = useState(null);
-//   const [docType, setDocType] = useState('');
-//   const [mimeType, setMimeType] = useState('');
-  
-//   useEffect(() => {
-//     fetchDocuments();
-//   }, []);
-
-//   async function fetchDocuments() {
-//     const metadata = await legal_smart_contract_backend.getDocumentMetadata();
-//     setDocuments(metadata);
-//   }
-
-//   async function handleUpload(event) {
-//     event.preventDefault();
-//     if (!name || !content || !docType || !mimeType) {
-//       alert('All fields are required');
-//       return;
-//     }
-
-//     const reader = new FileReader();
-//     reader.readAsArrayBuffer(content);
-//     reader.onloadend = async () => {
-//       const contentArray = [new Uint8Array(reader.result)];
-//       const result = await legal_smart_contract_backend.storeDocument(name, contentArray, docType, mimeType);
-//       if (result.ok) {
-//         alert('Document uploaded successfully!');
-//         fetchDocuments();
-//       } else {
-//         alert(result.err);
-//       }
-//     };
-//   }
-
-//   async function handleDelete(id) {
-//     const result = await legal_smart_contract_backend.deleteDocument(id);
-//     if (result.ok) {
-//       alert('Document deleted successfully!');
-//       fetchDocuments();
-//     } else {
-//       alert(result.err);
-//     }
-//   }
-
-//   return (
-//     <main>
-//       <h1>Legal Document Storage</h1>
-//       <form onSubmit={handleUpload}>
-//         <input type="text" placeholder="Document Name" value={name} onChange={(e) => setName(e.target.value)} required />
-//         <input type="file" onChange={(e) => { setContent(e.target.files[0]); setMimeType(e.target.files[0].type); }} required />
-//         <input type="text" placeholder="Document Type" value={docType} onChange={(e) => setDocType(e.target.value)} required />
-//         <button type="submit">Upload Document</button>
-//       </form>
-
-//       <h2>Stored Documents</h2>
-//       <ul>
-//         {documents.map((doc) => (
-//           <li key={doc.id}>
-//             {doc.name} - {doc.metadata.documentType} ({doc.metadata.status})
-//             <button onClick={() => handleDelete(doc.id)}>Delete</button>
-//           </li>
-//         ))}
-//       </ul>
-//     </main>
-//   );
-// }
-
-// export default App;
-
 import { useEffect, useState } from 'react';
 import { legal_smart_contract_backend } from '../../declarations/legal-smart-contract-backend';
 
@@ -219,3 +142,4 @@ function App() {
 }
 
 export default App;
+
