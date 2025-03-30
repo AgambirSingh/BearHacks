@@ -1,17 +1,16 @@
 import { useState } from 'react';
-import { legal_smart_contract_backend } from 'declarations/legal-smart-contract-backend';
 
 function App() {
-  const [greeting, setGreeting] = useState('');
+  // const [greeting, setGreeting] = useState('');
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    legal_smart_contract_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   const name = event.target.elements.name.value;
+  //   legal_smart_contract_backend.greet(name).then((greeting) => {
+  //     setGreeting(greeting);
+  //   });
+  //   return false;
+  // }
 
   return (
     <main>
