@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "legal-smart-contract-backend": {
+      "main": "src/legal-smart-contract-backend/main.mo",
+      "type": "motoko"
+    },
+    "legal-smart-contract-frontend": {
+      "dependencies": [
+        "legal-smart-contract-backend"
+      ],
+      "source": [
+        "src/legal-smart-contract-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "legal-smart-contract-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
